@@ -32,8 +32,39 @@ function getIssue(req, res) {
   }
 }
 
+function updateIssue(req, res) {
+  const issueId = Number(req.params.issueId);
+  const issue = model[issueId];
+  console.log("Updated:", issueId, issue);
+  const updatedIssue = req.body;
+  const index = model.findIndex((issue) => issue.id === parseInt(issueId));
+
+  if (index !== -1) {
+    model[index] = { ...model[index], ...updatedIssue };
+    console.log("Updated:", model[index]);
+    res.json(model[index]);
+  } else {
+    res.status(404).json({ message: "Issue not found" });
+  }
+}
+
+function deleteIssue(req, res) {
+  const issueId = Number(req.params.issueId);
+  const index = model.findIndex((issue) => issue.id === parseInt(issueId));
+
+  if (index !== -1) {
+    const deletedIssue = model.splice(index, 1)[0];
+    console.log("Deleted:", deletedIssue);
+    res.json(deletedIssue);
+  } else {
+    res.status(404).json({ message: "Issue not found" });
+  }
+}
+
 module.exports = {
   postIssue,
   getIssues,
   getIssue,
+  updateIssue,
+  deleteIssue,
 };

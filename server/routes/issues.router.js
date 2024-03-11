@@ -12,5 +12,7 @@ issuesRouter.use((req, res, next) => {
 issuesRouter.post("/", issuesController.postIssue);
 issuesRouter.get("/", issuesController.getIssues);
 issuesRouter.get("/:issueId", issuesController.getIssue);
+issuesRouter.put("/:issueId", issuesController.updateIssue);
+issuesRouter.delete("/:issueId", issuesController.deleteIssue);
 
 module.exports = issuesRouter;
