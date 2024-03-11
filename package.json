@@ -1,0 +1,15 @@
+{
+  "name": "sitemate_challenge",
+  "version": "1.0.0",
+  "description": "Sitemate Full Stack Engineer - Challenge Q2 24",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.3"
+  }
+}
