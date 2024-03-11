@@ -58,9 +58,11 @@ const IssueClient = () => {
 
   return (
     <div>
-      <h1>Issues</h1>
-      <button onClick={createIssue}>Create Issue</button>
-      <button onClick={getIssues}>Read All Issues</button>
+      <div className="container">
+        <h1>Issues</h1>
+        <button onClick={createIssue}>Create Issue</button>
+        <button onClick={getIssues}>Read All Issues</button>
+      </div>
       <ul>
         {issues.map((issue) => (
           <li key={issue.id}>
