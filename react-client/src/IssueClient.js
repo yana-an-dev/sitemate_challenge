@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const apiUrl = "http://localhost:3000/issues";
+const apiUrl = "http://localhost:3001/issues";
 
 const IssueClient = () => {
   const [issues, setIssues] = useState([]);
@@ -60,6 +60,7 @@ const IssueClient = () => {
     <div>
       <h1>Issues</h1>
       <button onClick={createIssue}>Create Issue</button>
+      <button onClick={getIssues}>Read All Issues</button>
       <ul>
         {issues.map((issue) => (
           <li key={issue.id}>
